@@ -150,7 +150,7 @@ jobs:
 
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-
+          sed -i 's/^\(\s*DRV_MAKE_OPTS\s*+=\s*NSS_DRV_RMNET_ENABLE=\)n/\1y/'  package/feeds/nss_packages/qca-nss-drv/Makefile
       - name: Custom Packages
         run: |
           cd ./wrt/package/
